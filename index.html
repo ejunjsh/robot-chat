@@ -31,10 +31,10 @@
 					$.getJSON("http://www.tuling123.com/openapi/api?key=652ae4a714794fe6b01faa990d7a981f&info="+v,function(json){
 						$(".chat-thread").append('<li class="receiver">'+json.text+'</li>');
 						setTimeout(function() {
-							$(window).scrollTop($(document).height()-$(window).height());
+							$(".chat-thread").scrollTop($(".chat-thread").height());
 						}, 200);
 					});
-					$(window).scrollTop($(document).height()-$(window).height());
+					$(".chat-thread").scrollTop($(".chat-thread").height());
 				}
 			}
 			

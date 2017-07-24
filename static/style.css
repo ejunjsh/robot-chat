@@ -25,9 +25,14 @@ body {
 }
 
 .chat-thread {
-  margin: 24px auto 0 auto;
+  margin: 24px auto 45px auto;
   padding: 0 20px 0 0;
   list-style: none;
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .chat-thread li {
@@ -64,7 +69,7 @@ body {
   -moz-animation: show-chat-odd 0.15s 1 ease-in;
   -webkit-animation: show-chat-odd 0.15s 1 ease-in;
   float: right;
-  margin-right: 50px;
+  margin-right: 60px;
   color: black;
   background-color:#b2e281;
 }
@@ -141,8 +146,7 @@ body {
 /* Small screens */
 @media (max-width: 767px) {
   .chat-thread {
-    width: 90%;
-    height: 100%;
+    width: 97%;
   }
 
   .msg-container{
@@ -161,7 +165,7 @@ body {
 @media  (min-width: 768px) {
   .chat-thread {
     width: 50%;
-    height: 100%;
+    left: 25%
   }
 
   .msg-container{
@@ -169,7 +173,7 @@ body {
    }
 
    .msg{
-  width: 48%;
+  width: 50%;
 }
 
   .chat-window {
