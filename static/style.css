@@ -25,7 +25,7 @@ body {
 }
 
 .chat-thread {
-  margin: 24px auto 45px auto;
+  margin: 5px auto 45px auto;
   padding: 0 20px 0 0;
   list-style: none;
   position: absolute;
