@@ -21,23 +21,34 @@
 </div>
 <script src="static/jquery.js"></script>
 <script>
+	function sendMsg(v,callback){
+		$(".chat-thread").append('<li class="sender">'+v+'</li>')
+       $.getJSON("http://www.tuling123.com/openapi/api?key=652ae4a714794fe6b01faa990d7a981f&info="+v,function(json){
+						$(".chat-thread").append('<li class="receiver">'+json.text+'</li>');
+						setTimeout(function() {
+							$(".chat-thread").scrollTop($(".chat-thread")[0].scrollHeight);
+						}, 200);
+						if(callback){
+							callback()
+						}
+					});
+					$(".chat-thread").scrollTop($(".chat-thread")[0].scrollHeight);
+	};
 	$(function(){
 		$(".msg").keyup(function(e){
 			var v=$(".msg").val();
 			if(v){
                 if(e.which==13){
 					$(".msg").val("")
-					$(".chat-thread").append('<li class="sender">'+v+'</li>')
-					$.getJSON("http://www.tuling123.com/openapi/api?key=652ae4a714794fe6b01faa990d7a981f&info="+v,function(json){
-						$(".chat-thread").append('<li class="receiver">'+json.text+'</li>');
-						setTimeout(function() {
-							$(".chat-thread").scrollTop($(".chat-thread").height());
-						}, 200);
-					});
-					$(".chat-thread").scrollTop($(".chat-thread").height());
+					sendMsg(v)
 				}
 			}
 			
+		});
+		sendMsg("你的名字",function(){
+			sendMsg("你的简介",function(){		
+				sendMsg("你的爱好");
+			});
 		});
 	});
 </script>
