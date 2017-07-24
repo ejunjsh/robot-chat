@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+
+  <title>robotchat</title>
+
+    <link rel="stylesheet" href="static/style.css" media="screen" type="text/css">
+
+</head>
+
+<body>
+
+<div>  
+<ul class="chat-thread">
+</ul>
+
+</div>
+<div class="msg-container">
+	<input type="text" class="msg" placeholder="回车发信息..." />
+</div>
+<script src="static/jquery.js"></script>
+<script>
+	$(function(){
+		$(".msg").keyup(function(e){
+			var v=$(".msg").val();
+			if(v){
+                if(e.which==13){
+					$(".msg").val("")
+					$(".chat-thread").append('<li class="sender">'+v+'</li>')
+					$.getJSON("http://www.tuling123.com/openapi/api?key=652ae4a714794fe6b01faa990d7a981f&info="+v,function(json){
+						$(".chat-thread").append('<li class="receiver">'+json.text+'</li>');
+						setTimeout(function() {
+							$(window).scrollTop($(window).height());
+						}, 200);
+					});
+					$(window).scrollTop($(window).height());
+				}
+			}
+			
+		});
+	});
+</script>
+</body>
+</html>
