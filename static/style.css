@@ -16,12 +16,12 @@ body {
 
 ::-webkit-scrollbar-track {
   border-radius: 10px;
-  background-color: rgba(25, 147, 147, 0.1);
+  background-color: #fafafa;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: rgba(25, 147, 147, 0.2);
+  background-color: #c1c1c1;
 }
 
 .headbar {
@@ -167,11 +167,12 @@ body {
   width: 100%;
   position: fixed;
   bottom: 0px;
-  border: 0;
+  border: 2px solid #eeeeee;
   outline: 0;
   -webkit-appearance: none;
   height: 40px;
-  padding:1px;
+  padding-left: 10px;
+  box-sizing: border-box;
   font: 16px/20px 'Noto Sans', sans-serif;
 }
 
