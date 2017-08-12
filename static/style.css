@@ -24,12 +24,44 @@ body {
   background-color: rgba(25, 147, 147, 0.2);
 }
 
+.headbar {
+  height: 32px;
+  background-color: #E3E3E3;
+  padding: 0 12px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.headbar-btns{
+  line-height: 32px;
+}
+
+.headbar-btn {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #eee;
+  margin-right: 8px;
+}
+
+.headbar-btn-red {
+  background-color: #FF5F57;
+}
+.headbar-btn-yellow {
+  background-color: #FFBD2E;
+}
+.headbar-btn-green {
+  background-color: #28CA42;
+}
+
+
 .chat-thread {
   margin: 5px auto 45px auto;
   padding: 0 20px 0 0;
   list-style: none;
   position: absolute;
-  top:0px;
+  top:29px;
   bottom: 0px;
   overflow-y: auto;
   overflow-x: hidden;
