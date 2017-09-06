@@ -177,7 +177,7 @@ body {
 }
 
 /* Small screens */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .chat-thread {
     width: 97%;
   }
@@ -195,7 +195,7 @@ body {
   }
 }
 /* Medium and large screens */
-@media  (min-width: 768px) {
+@media  (min-width: 801px) {
   .chat-thread {
     width: 50%;
     left: 25%
